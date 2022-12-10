@@ -1,0 +1,68 @@
+.homeadmin {
+    /* background-image: url("https://c4.wallpaperflare.com/wallpaper/46/374/498/coffee-cappuccino-cafes-rain-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    width: 100%;
+    height: auto;
+}
+.data {
+    padding-top: 5%;
+}
+.table-admin table thead tr {
+    background-color: burlywood;
+    color: white;
+}
+.table-admin table thead tr th {
+    text-align: center;
+}
+.harga {
+    width: 90px;
+}
+.aksi {
+    width: 170px;
+}
+.tombol {
+    border: none;
+    padding: 5% 7%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+.delete {
+    background-color: red;
+}
+.ubah {
+    background-color: rgb(253, 174, 27);
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 550px) {
+    tr th {
+        font-size: 12px;
+    }
+    tr td {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .harga {
+        width: 60px;
+    }
+    .aksi {
+        width: 90px;
+    }
+    .tombol {
+        font-size: 10px;
+        padding: 8% 10%;
+    }
+    .delete {
+        margin-bottom: 10px;
+    }
+    img {
+        width: 50px;
+        height: 50px;    
+    }
+}

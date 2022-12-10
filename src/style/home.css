@@ -1,0 +1,150 @@
+.welcome {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/46/374/498/coffee-cappuccino-cafes-rain-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    /* opacity: 0.8; */
+    position: relative;
+}
+.ucapan {
+    position: absolute;
+    bottom: 35%;
+    left: 8%;
+    line-height: 10px;
+    color: rgb(82, 56, 22);
+    cursor: default;
+}
+.ucapan small {
+    font-size: 32px;
+    font-weight: 500;
+}
+.ucapan h1 {
+    font-size: 140px;
+    font-weight: 700;
+}
+.ucapan p {
+    font-size: 20px;
+    font-weight: 500;
+}
+.promo {
+    background-image: linear-gradient(to bottom,wheat, white);
+    text-align: center;
+}
+.promo h3 {
+    padding-top: 2%;
+    font-size: 36px;
+}
+.promo h4 {
+    font-size: 24px;
+}
+.carousel-item{
+    justify-content: center;
+}
+.carousel-item img {
+    padding: 3% 20%;
+    height: 100vh;
+}
+.produk {
+    background-image: linear-gradient(to bottom, white, wheat);
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+.card {
+    width: 18rem;
+    box-shadow: 0px 10px 10px rgb(0,0, 0, .1);
+}
+.img {
+    width: 18rem;
+    height: 12rem;
+}
+.card img {
+    width: 18rem;
+    height: 12rem;
+}
+.card-body h3 {
+    padding-top: 2%;
+    text-align: center;
+    color: rgb(82, 56, 22);
+    font-size: 24px;
+}
+.card-body h5{
+    text-align: justify;
+    font-size: 15px;
+    color: rgb(0,0, 0, .7);
+}
+.card-body h4 {
+    padding: 4% 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(82, 56, 22);
+}
+.buy {
+    text-align: center;
+    margin-bottom: 5%;
+}
+.card-body a {
+    background-color: wheat;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: sienna;
+    transition: all 0.5s;
+}
+.buy :hover {
+    background-color: sienna;
+    cursor: pointer;
+}
+.card-body a :hover{
+    color: white;
+}
+@media only screen and (max-width: 550px) {
+    .welcome {
+        width: 100%;
+        background-size: cover;
+        height: 300px;
+    }
+    .ucapan {
+        position: absolute;
+        bottom: 20%;
+        left: 5%;
+        line-height: 18px;
+        color: rgb(82, 56, 22);
+        cursor: default;
+    }
+    .ucapan small {
+        font-size: 24px;
+    }
+    .ucapan h1 {
+        font-size: 60px;
+    }
+    .ucapan p {
+        font-size: 11px;
+    }
+    .promo h3 {
+        padding-top: 8%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 16px;
+    }
+    .promo h4 {
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 12px;
+    }
+    small b{
+        font-size: 11px;
+    }
+    .carousel-item img {
+        padding: 8% 10%;
+        height: 300px;
+    }    
+    .card-produk{
+        gap: 10px;
+    }
+  }

@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "dinda@gmail.com",
+      "password": "dinda"
+    },
+    {
+      "email": "dinda",
+      "password": "111",
+      "id": 2
+    },
+    {
+      "email": "riu",
+      "password": "111",
+      "id": 3
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "username": "Admin",
+      "password": "Administrator"
+    }
+  ],
+  "daftarMenu": [
+    {
+      "gambar": "https://awsimages.detik.net.id/community/media/visual/2022/12/07/5-es-kopi-susu-favorit-netizen-dari-yang-murah-hingga-premium.jpeg?w=700&q=90",
+      "nama": "Es Kopi Kenangan Mantan",
+      "deskripsi": "Rasakan enaknya es kopi hingga lupa kenangan indah bersama mantan",
+      "harga": 20000,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "gambar": "https://mesinkopi.me/wp-content/uploads/2019/09/Cara-Membuat-Kopi-Espresso-1.jpeg",
+      "nama": "Expresso Coffee",
+      "deskripsi": "Terbuat dari kopi pilihan, diseduh dengan suhu tinggi hingga menghasilkan ekstrak kopi yang kental. ",
+      "harga": 25000
+    },
+    {
+      "id": 3,
+      "gambar": "https://www.nescafe.com/id/sites/default/files/Sama-sama-Berbahan-Dasar-Susu%2C-Apa-Perbedaan-Cappuccino-dan-Latte.gif",
+      "nama": "Cappucino Coffee",
+      "deskripsi": "Campuran kopi dan susu yang pas dengan foam yang creamy dan tebal siap memanjakan lidah Anda",
+      "harga": 30000
+    },
+    {
+      "gambar": "https://awsimages.detik.net.id/community/media/visual/2021/10/15/5-tempat-jajan-croffle-kekinian-via-online-praktis-banget-1_43.jpeg?w=1200",
+      "nama": "Croffle",
+      "deskripsi": "Croffle yang autentik akan memiliki lapisan luar garing seperti croissant sementara bagian dalamnya memiliki tekstur yang agak kenyal seperti tekstur pada wafel",
+      "harga": 20000,
+      "id": 4
+    },
+    {
+      "gambar": "https://asset.kompas.com/crops/6PlaplUrVfOZo3mVu0jnD3FYA2A=/0x0:1000x667/750x500/data/photo/2020/03/25/5e7b1100e0602.jpg",
+      "nama": "Cinnamon Roll",
+      "deskripsi": "Cinnamon Roll yang empuk dengan aroma dan rasa kayu manis menambah cita rasa manis gurih di setiap gigitan",
+      "harga": 28000,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "gambar": "https://i0.wp.com/www.tokomesin.com/wp-content/uploads/2017/10/Resep-Roti-Croissant-yang-Manis-dan-Empuk-Banget.jpg?fit=555%2C369&ssl=1",
+      "nama": "Croissant",
+      "deskripsi": "Memiliki tekstur yang renyah dan garing, bentuknya seperti cangkang kerang dengan rasa yang gurih cocok menjadi pendamping secangkir kopi.",
+      "harga": 18000
+    },
+    {
+      "gambar": "https://akcdn.detik.net.id/api/wm/2021/01/30/minuman-matcha_169.jpeg",
+      "nama": "Matcha Latte",
+      "deskripsi": "Terbuat dari matcha dan susu dengan komposisi tepat, menghasilkan matcha latte yang creamy dan sehat",
+      "harga": 23000,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "gambar": "https://assets-pergikuliner.com/uploads/bootsy/image/15730/medium_picture-1565054749.jpg",
+      "nama": "Bobba Drink",
+      "deskripsi": "Boba merupakan bola tapioka yang kenyal, diolah dengan brown sugar agar terasa manis dan berwarna hitam dipadukan dengan creamy susu",
+      "harga": 20000
+    },
+    {
+      "id": 9,
+      "gambar": "https://www.thespruceeats.com/thmb/qB63P8d50_HR5JMhdbwGvcFgKjE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chocolate-milkshake-4587581-hero-1-22c8a039103c413dafd75f4f4c39ddd4.JPG",
+      "nama": "Chocolate Milkshake",
+      "deskripsi": "Minuman dingin terbuat dari campuran susu, es krim, dan chocolate yang dikocok hingga berbusa dan bertekstur creamy ",
+      "harga": 28000
+    }
+  ],
+  "cart": [
+    {
+      "gambar": "https://awsimages.detik.net.id/community/media/visual/2022/12/07/5-es-kopi-susu-favorit-netizen-dari-yang-murah-hingga-premium.jpeg?w=700&q=90",
+      "nama": "Es Kopi Kenangan Mantan",
+      "deskripsi": "Rasakan enaknya es kopi hingga lupa kenangan indah bersama mantan",
+      "harga": 20000,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "gambar": "https://mesinkopi.me/wp-content/uploads/2019/09/Cara-Membuat-Kopi-Espresso-1.jpeg",
+      "nama": "Expresso Coffee",
+      "deskripsi": "Terbuat dari kopi pilihan, diseduh dengan suhu tinggi hingga menghasilkan ekstrak kopi yang kental. ",
+      "harga": 25000
+    },
+    {
+      "id": 3,
+      "gambar": "https://www.nescafe.com/id/sites/default/files/Sama-sama-Berbahan-Dasar-Susu%2C-Apa-Perbedaan-Cappuccino-dan-Latte.gif",
+      "nama": "Cappucino Coffee",
+      "deskripsi": "Campuran kopi dan susu yang pas dengan foam yang creamy dan tebal siap memanjakan lidah Anda",
+      "harga": 30000
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+.navbar {
+    background-color: wheat;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.container-fluid a img{
+    width: 50px;
+    height: auto;
+}
+.navbar-nav a{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(82, 56, 22);
+    cursor: pointer;
+}
+.header {
+    background-color: wheat;
+    color: rgb(82, 56, 22);
+}
+.mb-3 strong {
+    color: rgb(82, 56, 22);
+}
+
+@media only screen and (max-width: 550px) {
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .container-fluid a img{
+        width: 50px;
+    }
+    .navbar-nav a{
+        font-size: 18px;
+        font-weight: 500;
+        color: rgb(82, 56, 22);
+    }
+    
+}

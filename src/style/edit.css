@@ -1,0 +1,21 @@
+.edit {
+    box-shadow: 0 10px 10px rgb(0, 0, 0, .1);
+    margin-top: 4%;
+    background-color: wheat;
+    border-radius: 20px;
+}
+.box {
+    padding: 2%;
+}
+.header h1 {
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 550px) {
+    .box {
+        padding: 8%;
+    }
+    .header h1 {
+        margin-bottom: 25px;
+    }
+}

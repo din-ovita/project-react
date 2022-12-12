@@ -10,7 +10,7 @@ import "../style/home.css";
 export default function Home() {
   const history = useHistory();
 
-  const addToCart = async ( daftar) => {
+  const addToCart = async (daftar) => {
     await axios .post("http://localhost:8000/cart/", daftar)
     Swal.fire({
       icon: 'success',

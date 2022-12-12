@@ -34,9 +34,11 @@
 .promo h3 {
     padding-top: 2%;
     font-size: 36px;
+    cursor: default;
 }
 .promo h4 {
     font-size: 24px;
+    cursor: default;
 }
 .carousel-item{
     justify-content: center;

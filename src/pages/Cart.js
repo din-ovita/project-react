@@ -6,17 +6,21 @@ import "../style/cart.css"
 export default function Cart() {
 const [menu, setMenu] = useState([]);
 
-// const totalHarga = () => {
-//   this.daftar.reduce((a, b) => a + b.harga, 0)
-// }
+const total = menu.reduce((a, b) => a + b.harga, 0);
 
-// const checkout = () => {
-//    if(!this.totalHarga) {
-//      Swal.fire("Failed :(", "Please select the item", "error");  
-//    }
-//    Swal.fire("Checkout Successfull!", "Thank you for shopping", "success")
-//    window.location.reload();
-// }
+const checkout = async (id) => {
+  //  if(!this.total) {
+  //    return Swal.fire("Failed :(", "Please select the item", "error");  
+  //  }
+  Swal.fire({
+    title: "Checkout Successfull!", 
+    text: "Thank you for shopping", 
+    icon: "success",
+    timer: 5000
+  });
+  axios.delete("http://localhost:8000/cart/" + id);
+    // window.location.reload();
+}
 
 const getAll = () => {
   axios
@@ -71,8 +75,8 @@ const deleteMenu = async (id) =>  {
               <th className="aksi">Aksi</th>
             </tr>
           </thead>
-          <tbody>
           {menu.map((daftar, index) => (
+          <tbody>
             <tr key={daftar.id}>
               <td>{index + 1}</td>
               <td><img src={daftar.gambar} /></td>
@@ -88,14 +92,15 @@ const deleteMenu = async (id) =>  {
                   </button>
               </td>
             </tr>
-          ))}
+            <tr></tr>
           </tbody>
+        ))}
         </table>
       </div>
     </div>
-    <strong>Total Harga : </strong>
+    <strong>Total Harga : {total}</strong>
     <div className="checkout">
-      <button >CheckOut</button>
+      <button onClick={checkout}>CheckOut</button>
     </div>
     </div>
   )

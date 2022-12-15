@@ -8,26 +8,25 @@ import promo3 from "../image/promo1.jpg";
 import "../style/home.css";
 
 export default function Home() {
+  const [menu, setMenu] = useState([]);
   const history = useHistory();
 
   const addToCart = async (daftar) => {
-    await axios .post("http://localhost:8000/cart/", daftar)
+    await axios.post("http://localhost:8000/cart/", daftar);
     Swal.fire({
-      icon: 'success',
-      title: 'Berhasil dimasukkan ke Cart',
+      icon: "success",
+      title: "Berhasil dimasukkan ke Cart",
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     })
-    .then(() => {
-      window.location.reload();
-      history.push("/cart");
-    })
-    .catch((error) => {
-      alert("Terjadi kesalahan " + error);
-    });
+      .then(() => {
+        window.location.reload();
+        history.push("/cart");
+      })
+      .catch((error) => {
+        alert("Terjadi kesalahan " + error);
+      });
   };
-
-  const [menu, setMenu] = useState([]);
 
   const getAll = () => {
     axios
@@ -48,16 +47,27 @@ export default function Home() {
     <div className="home">
       <div className="welcome">
         <div className="ucapan">
-        <small>Selamat Datang di</small>
-        <h1>LeKafe</h1>
-        <p>Kafe kekinian dengan berbagai pilihan menu hitz. Dijamin ketagihan</p>
+          <small>Selamat Datang di</small>
+          <h1>LeKafe</h1>
+          <p>
+            Kafe kekinian dengan berbagai pilihan menu hitz. Dijamin ketagihan
+          </p>
         </div>
       </div>
 
       <div className="promo">
-        <h3><b>YEAY!! HARI INI</b> Kalian masih bisa nikmati <span className="coffe">Promo International Coffee Day</span> dengan harga spesial mulai Rp 25.000,-</h3>
-        <h4>Udah gitu, bisa tambah menu lain favorit kamu juga, kayak : Croffle, Croissant, atau Chocolate MilkShake</h4>
-        <small><b>* syarat dan ketentuan berlaku</b></small>
+        <h3>
+          <b>YEAY!! HARI INI</b> Kalian masih bisa nikmati{" "}
+          <span className="coffe">Promo International Coffee Day</span> dengan
+          harga spesial mulai Rp 25.000,-
+        </h3>
+        <h4>
+          Udah gitu, bisa tambah menu lain favorit kamu juga, kayak : Croffle,
+          Croissant, atau Chocolate MilkShake
+        </h4>
+        <small>
+          <b>* syarat dan ketentuan berlaku</b>
+        </small>
         <div
           id="carouselExampleControls"
           className="carousel slide"
@@ -105,7 +115,7 @@ export default function Home() {
         {menu.map((daftar) => (
           <div key={daftar.id} className="card">
             <div className="img">
-            <img src={daftar.gambar} className="card-img-top" />
+              <img src={daftar.gambar} className="card-img-top" />
             </div>
             <div className="card-body">
               <h3>{daftar.nama}</h3>
@@ -113,9 +123,7 @@ export default function Home() {
               <h4>Rp {daftar.harga}</h4>
               {localStorage.getItem("id") !== null ? (
                 <div className="buy">
-                  <a onClick={() => addToCart(daftar)}>
-                    Buy Now
-                  </a>
+                  <a onClick={() => addToCart(daftar)}>Buy Now</a>
                 </div>
               ) : (
                 <></>

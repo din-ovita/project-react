@@ -1,107 +1,110 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
-import "../style/cart.css"
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import "../style/cart.css";
 
 export default function Cart() {
-const [menu, setMenu] = useState([]);
+  const [menu, setMenu] = useState([]);
+  const total = menu.reduce((a, b) => a + b.harga, 0);
 
-const total = menu.reduce((a, b) => a + b.harga, 0);
-
-const checkout = async (id) => {
-  //  if(!this.total) {
-  //    return Swal.fire("Failed :(", "Please select the item", "error");  
-  //  }
-  Swal.fire({
-    title: "Checkout Successfull!", 
-    text: "Thank you for shopping", 
-    icon: "success",
-    timer: 5000
-  });
-  axios.delete("http://localhost:8000/cart/" + id);
-    // window.location.reload();
-}
-
-const getAll = () => {
-  axios
-    .get("http://localhost:8000/cart")
-    .then((res) => {
-      setMenu(res.data);
-    })
-    .catch((error) => {
-      alert("Terjadi kesalahan" + error);
-    });
-};
-
-useEffect(() => {
-  getAll();
-}, []);
-
-const deleteMenu = async (id) =>  {
-  Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      axios.delete("http://localhost:8000/cart/" + id);
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-        )
+  const checkout = () => {
+    //  if(!this.total) {
+    //    return Swal.fire("Failed :(", "Please select the item", "error");
+    //  }
+    axios
+      .delete("http://localhost:8000/cart")
+      .then(() => {
         window.location.reload();
-    }
-  })
-  getAll();
-};
+      })
+      .catch((error) => {
+        alert("Terjadi kesalahan" + error);
+      });
+    Swal.fire({
+      title: "Checkout Successfull!",
+      text: "Thank you for shopping",
+      icon: "success",
+      timer: 5000,
+    });
+    // window.location.reload();
+  };
+
+  const getAll = () => {
+    axios
+      .get("http://localhost:8000/cart")
+      .then((res) => {
+        setMenu(res.data);
+      })
+      .catch((error) => {
+        alert("Terjadi kesalahan" + error);
+      });
+  };
+
+  useEffect(() => {
+    getAll();
+  }, []);
+
+  const deleteMenu = async (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete("http://localhost:8000/cart/" + id);
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        window.location.reload();
+      }
+    });
+    getAll();
+  };
 
   return (
     <div>
-          <div className="container my-5">
-            <div className="table-admin">
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Gambar</th>
-              <th>Nama</th>
-              <th>Deskripsi</th>
-              <th className="harga">Harga</th>
-              <th className="aksi">Aksi</th>
-            </tr>
-          </thead>
-          {menu.map((daftar, index) => (
-          <tbody>
-            <tr key={daftar.id}>
-              <td>{index + 1}</td>
-              <td><img src={daftar.gambar} /></td>
-              <td>{daftar.nama}</td>
-              <td>{daftar.deskripsi}</td>
-              <td>Rp {daftar.harga}</td>
-              <td>
-              <button
-                  className="mx-1 tombol delete"
-                  onClick={() => deleteMenu(daftar.id)}
-                  >
-                   Hapus
-                  </button>
-              </td>
-            </tr>
-            <tr></tr>
-          </tbody>
-        ))}
-        </table>
+      <div className="container my-5">
+        <div className="table-admin">
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Gambar</th>
+                <th>Nama</th>
+                <th>Deskripsi</th>
+                <th className="harga">Harga</th>
+                <th className="aksi">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {menu.map((daftar, index) => (
+                <tr key={daftar.id}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <img src={daftar.gambar} />
+                  </td>
+                  <td>{daftar.nama}</td>
+                  <td>{daftar.deskripsi}</td>
+                  <td>Rp {daftar.harga}</td>
+                  <td>
+                    <button
+                      className="mx-1 tombol delete"
+                      onClick={() => deleteMenu(daftar.id)}
+                    >
+                      Hapus
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+          <strong>Total Harga : Rp {total}</strong>
+        <div className="checkout">
+          <button onClick={() => checkout()}>CheckOut</button>
+        </div>
     </div>
-    <strong>Total Harga : {total}</strong>
-    <div className="checkout">
-      <button onClick={checkout}>CheckOut</button>
-    </div>
-    </div>
-  )
+  );
 }

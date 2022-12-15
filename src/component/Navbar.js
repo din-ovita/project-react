@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../style/navbar.css";
-import logo from "../image/pngegg (6).png"
+import logo from "../image/pngegg (6).png";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { Modal, Form, FormControl, FormLabel, InputGroup, ModalBody, ModalHeader, ModalTitle } from "react-bootstrap";
+import {
+  Modal,
+  Form,
+  FormControl,
+  FormLabel,
+  InputGroup,
+  ModalBody,
+  ModalHeader,
+  ModalTitle,
+} from "react-bootstrap";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
@@ -22,25 +31,20 @@ export default function Navbar() {
     e.preventDefault();
 
     const data = {
-      gambar : gambar,
-      nama : nama,
-      deskripsi : deskripsi,
-      harga : harga,
-    }
+      gambar: gambar,
+      nama: nama,
+      deskripsi: deskripsi,
+      harga: harga,
+    };
 
-    await axios
-    .post(" http://localhost:8000/daftarMenu/", data)
-    Swal.fire(
-      'Success',
-      'Data berhasil ditambahkan!',
-      'success'
-    )
-    .then(() => {
-      window.location.reload();
-    })
-    .catch((error) => {
-      alert("Terjadi kesalahan " + error);
-    });
+    await axios.post(" http://localhost:8000/daftarMenu/", data);
+    Swal.fire("Success", "Data berhasil ditambahkan!", "success")
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        alert("Terjadi kesalahan " + error);
+      });
   };
 
   const logout = () => {
@@ -100,7 +104,9 @@ export default function Navbar() {
               {localStorage.getItem("username") !== null ? (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link" onClick={handleShow}>Tambah Data</a>
+                    <a className="nav-link" onClick={handleShow}>
+                      Tambah Data
+                    </a>
                   </li>
                 </>
               ) : (
@@ -133,48 +139,79 @@ export default function Navbar() {
 
       {/* modal */}
       <Modal show={show} onHide={handleClose} className="modal">
-    <ModalHeader closeButton className='header'>
-      <ModalTitle>Add Menu</ModalTitle>
-    </ModalHeader>
-    <ModalBody>
-      <Form onSubmit={addMenu} method="POST">
-        <div className="mb-3">
-          <FormLabel>
-            <strong>Link Gambar</strong>
-          </FormLabel>
-          <InputGroup className="d-flex gap-3">
-            <FormControl placeholder="Masukkan link gambar..." value={gambar} onChange={(e) => setGambar(e.target.value)} required />
-          </InputGroup>
-        </div>
-        <div className="mb-3">
-          <FormLabel>
-            <strong>Nama</strong>
-          </FormLabel>
-          <InputGroup className="d-flex gap-3">
-            <FormControl placeholder="Masukkan nama.." value={nama} onChange={(e) => setNama(e.target.value)} required />
-          </InputGroup>
-        </div>
-        <div className="mb-3">
-          <FormLabel>
-            <strong>Deskripsi</strong>
-          </FormLabel>
-          <InputGroup className="d-flex gap-3">
-            <FormControl placeholder="Masukkan deskripsi..." value={deskripsi} onChange={(e) => setDeskripsi(e.target.value)} required />
-          </InputGroup>
-        </div>
-        <div className="mb-3">
-          <FormLabel>
-            <strong>Harga</strong>
-          </FormLabel>
-          <InputGroup className="d-flex gap-3">
-            <FormControl placeholder="Masukkan harga..." value={harga} onChange={(e) => setHarga(e.target.value)} required />
-          </InputGroup>
-        </div>
-        <button className="mx-1 button-btl btn btn-danger" onClick={handleClose}>Close</button>
-        <button type="submit" className="mx-1 buoton btn btn-primary" onClick={handleClose}>Save</button>
-      </Form>
-    </ModalBody>
-  </Modal>
+        <ModalHeader closeButton className="header">
+          <ModalTitle>Add Menu</ModalTitle>
+        </ModalHeader>
+        <ModalBody>
+          <Form onSubmit={addMenu} method="POST">
+            <div className="mb-3">
+              <FormLabel>
+                <strong>Link Gambar</strong>
+              </FormLabel>
+              <InputGroup className="d-flex gap-3">
+                <FormControl
+                  placeholder="Masukkan link gambar..."
+                  value={gambar}
+                  onChange={(e) => setGambar(e.target.value)}
+                  required
+                />
+              </InputGroup>
+            </div>
+            <div className="mb-3">
+              <FormLabel>
+                <strong>Nama</strong>
+              </FormLabel>
+              <InputGroup className="d-flex gap-3">
+                <FormControl
+                  placeholder="Masukkan nama.."
+                  value={nama}
+                  onChange={(e) => setNama(e.target.value)}
+                  required
+                />
+              </InputGroup>
+            </div>
+            <div className="mb-3">
+              <FormLabel>
+                <strong>Deskripsi</strong>
+              </FormLabel>
+              <InputGroup className="d-flex gap-3">
+                <FormControl
+                  placeholder="Masukkan deskripsi..."
+                  value={deskripsi}
+                  onChange={(e) => setDeskripsi(e.target.value)}
+                  required
+                />
+              </InputGroup>
+            </div>
+            <div className="mb-3">
+              <FormLabel>
+                <strong>Harga</strong>
+              </FormLabel>
+              <InputGroup className="d-flex gap-3">
+                <FormControl
+                  placeholder="Masukkan harga..."
+                  value={harga}
+                  onChange={(e) => setHarga(e.target.value)}
+                  required
+                />
+              </InputGroup>
+            </div>
+            <button
+              className="mx-1 button-btl btn btn-danger"
+              onClick={handleClose}
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              className="mx-1 buoton btn btn-primary"
+              onClick={handleClose}
+            >
+              Save
+            </button>
+          </Form>
+        </ModalBody>
+      </Modal>
     </div>
   );
 }
